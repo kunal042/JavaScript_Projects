@@ -19,6 +19,8 @@ async function fetchAPI(word){
 
         if (result.title){
 
+            
+
             infoText.style.display = "none"
             meaningContainer.style.display = "block";
 
