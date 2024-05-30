@@ -5,9 +5,6 @@ const title = document.getElementById("title")
 const meaning = document.getElementById("meaning")
 const audio = document.getElementById("audio")
 
-
-
-
 async function fetchAPI(word){
     // console.log(word);
 
@@ -45,6 +42,8 @@ async function fetchAPI(word){
     }
     
 }
+
+
 
 
 
