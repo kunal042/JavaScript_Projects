@@ -1,7 +1,7 @@
 const input = document.getElementById("input")
 const infoText = document.getElementById("info-text")
 const meaningContainer = document.getElementById("meaning-container")
-const tiitle = document.getElementById("title")
+const title = document.getElementById("title")
 const meaning = document.getElementById("meaning")
 const audio = document.getElementById("audio")
 
@@ -13,8 +13,6 @@ async function fetchAPI(word){
 
     try {
 
-
-
         infoText.style.display = "block"
         meaningContainer.style.display = "none";
 
@@ -23,17 +21,18 @@ async function fetchAPI(word){
         const result = await fetch(url).then((res)=> res.json());
 
         if (result.title){
+
             infoText.style.display = "none"
             meaningContainer.style.display = "block";
 
-            tiitle.innerText = word;
+            title.innerText = word;
             meaning.innerText = "N/A"
             audio.style.display = "None"
         }else{
             // console.log(result);
             infoText.style.display = "none"
             meaningContainer.style.display = "block";
-            tiitle.innerText = result[0].word
+         title.innerText = result[0].word
             meaning.innerText = result[0].meanings[0].definitions[0].definition;
             audio.src = result[0].phonetics[0].audio;
 
